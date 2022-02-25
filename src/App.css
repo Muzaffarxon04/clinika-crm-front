@@ -1,0 +1,12 @@
+
+.container{
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+
+.dark{
+    background-color: #363062;
+    color: white;
+}
+
