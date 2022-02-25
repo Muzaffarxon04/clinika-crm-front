@@ -24,12 +24,20 @@ function Queue() {
         e.preventDefault()
         try {
             const body = { first_name, last_name, phone_number, direction_name}
-           await fetch("https://clinica-crm-bankend.herokuapp.com/queue", {
+           let response = await fetch("https://clinica-crm-bankend.herokuapp.com/queue", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)
             })
- alert('Malumotingiz qabul qilindi')
+            if (response.status === 200) {
+             alert('Malumotingiz qabul qilindi')
+              window.location.href = "/"
+              
+            }else{
+             alert('Malumotingiz Jonatilmadi qaytadan urunib koring')
+                
+            }
+
         } catch (error) {
             console.error(error.message);
         }
